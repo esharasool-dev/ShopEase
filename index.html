@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopEase</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+<!-- ! Header  -->
+<header class="header">
+
+    <nav class="navbar">
+
+  <a href="#" class="logo">
+    <img src="images/logo.png" alt="ShopEase Logo">
+</a>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#shop">Shop</a></li>
+            <li><a href="#categories">Categories</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+
+        <div class="nav-actions">
+
+            <!-- ! Theme Toggle -->
+            <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">
+                <i class="fa-regular fa-moon"></i>
+            </button>
+
+            <!-- ! Shopping Cart -->
+            <a href="#cart" class="cart-btn" aria-label="Shopping cart">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span class="cart-count">0</span>
+            </a>
+
+            <!-- ! Mobile Menu Button -->
+            <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+        </div>
+
+    </nav>
+
+</header>
+
+<!-- ! Hero Section -->
+
+<section class="hero" id="home">
+
+    <div class="hero-container">
+
+        <div class="hero-content">
+
+            <span class="hero-tag">
+                Discover Your Style
+            </span>
+
+            <h1>
+                Find Your <span>Everyday</span> Essentials.
+            </h1>
+
+            <p>
+                Explore quality products made for your everyday life.
+                Discover your favorites and enjoy a simple shopping experience.
+            </p>
+
+            <div class="hero-buttons">
+
+                <button class="shop-btn" id="shopNowBtn">
+                    Shop Now
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+                <button class="category-btn" id="categoryBtn">
+                    Explore Categories
+                </button>
+
+            </div>
+
+            <div class="hero-info">
+
+                <div>
+                    <h3>Quality</h3>
+                    <p>Selected Products</p>
+                </div>
+
+                <div>
+                    <h3>Easy</h3>
+                    <p>Shopping Experience</p>
+                </div>
+
+                <div>
+                    <h3>Style</h3>
+                    <p>For Everyday Life</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ! Products Section -->
+<section class="products-section" id="products">
+
+    <div class="products-container">
+
+        <div class="products-heading">
+            <div class="heading-label">
+                <span></span>
+                <p>OUR COLLECTION</p>
+                <span></span>
+            </div>
+
+            <h2>Shop Our <em>Favorites</em></h2>
+
+            <p class="heading-description">
+                Discover handpicked products that bring style and comfort to your everyday life.
+            </p>
+        </div>
+
+        <!-- ! Products Grid -->
+        <div class="products-grid" id="productsGrid">
+
+        </div>
+
+        <!-- *** Loading / Error Message -->
+        <p class="products-message" id="productsMessage">
+            Loading our favorites...
+        </p>
+
+        <!-- ! View All Button -->
+        <div class="view-products">
+            <button class="view-all-btn" id="viewAllBtn">
+                <span>View All Products</span>
+                <span class="view-arrow">→</span>
+            </button>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+<script src="script.js"></script>
+</html>
