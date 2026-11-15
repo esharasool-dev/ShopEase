@@ -4,349 +4,597 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ShopEase</title>
+
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
+
 <body>
-<!-- ! Header -->
-<header class="header">
-    <nav class="navbar">
-        <a href="#home" class="logo">
-            <img src="images/logo.png" alt="ShopEase Logo">
-        </a>
 
-        <ul class="nav-links" id="navLinks">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#products">Shop</a></li>
-            <li><a href="#products">Categories</a></li>
-            <li><a href="#about">About</a></li>
-        </ul>
+    <!-- Navbar -->
+    <header class="header">
+        <nav class="navbar">
 
-        <div class="nav-actions">
-            <!-- ! Theme Toggle -->
-            <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">
-                <i class="fa-regular fa-moon"></i>
-            </button>
-
-            <!-- ! Shopping Cart -->
-            <a href="#cart" class="cart-btn" aria-label="Shopping cart">
-                <i class="fa-solid fa-bag-shopping"></i>
-                <span class="cart-count" id="cartCount">0</span>
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="ShopEase Logo">
             </a>
 
-            <!-- ! Mobile Menu Button -->
-            <button class="menu-btn" id="menuBtn" aria-label="Open menu">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-        </div>
-    </nav>
-</header>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Shop</a></li>
+                <li><a href="#products">Categories</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
 
-<!-- ! Hero Section -->
-<section class="hero" id="home">
-    <div class="hero-container">
-        <div class="hero-content">
-            <span class="hero-tag">Discover Your Style</span>
+            <div class="nav-actions">
 
-            <h1>
-                Find Your <span>Everyday</span> Essentials.
-            </h1>
-
-            <p>
-                Explore quality products made for your everyday life.
-                Discover your favorites and enjoy a simple shopping experience.
-            </p>
-
-            <div class="hero-buttons">
-                <a href="#products" class="shop-btn" id="shopNowBtn">
-                    Shop Now
-                    <i class="fa-solid fa-arrow-right"></i>
-                </a>
-
-                <button class="category-btn" id="categoryBtn">
-                    Explore Categories
+                <button class="theme-btn" id="themeBtn" type="button" aria-label="Toggle theme">
+                    <i class="fa-solid fa-moon"></i>
                 </button>
+
+                <button class="cart-btn" id="cartBtn" type="button" aria-label="Shopping cart">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+
+                <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
             </div>
 
-            <div class="hero-info">
-                <div>
-                    <h3>Quality</h3>
-                    <p>Selected Products</p>
+        </nav>
+    </header>
+
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+
+        <div class="hero-container">
+
+            <div class="hero-content">
+
+                <span class="hero-tag">Quality Finds, Everyday Style</span>
+
+                <h1>
+                    Find Your Next
+                    <span>Favorite Thing.</span>
+                </h1>
+
+                <p>
+                    Discover products that bring comfort, style and value
+                    into your everyday life. Shop your favorites with ease.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#products" class="shop-btn" id="shopNowBtn">
+                        Shop Now
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                    <a href="#products" class="category-btn" id="categoryBtn">
+                        Explore Categories
+                    </a>
+
                 </div>
 
-                <div>
-                    <h3>Easy</h3>
-                    <p>Shopping Experience</p>
+                <div class="hero-info">
+
+                    <div>
+                        <h3>Quality</h3>
+                        <p>Products you can trust</p>
+                    </div>
+
+                    <div>
+                        <h3>Easy Shopping</h3>
+                        <p>A simple shopping experience</p>
+                    </div>
+
+                    <div>
+                        <h3>Great Value</h3>
+                        <p>Everyday essentials</p>
+                    </div>
+
                 </div>
 
-                <div>
-                    <h3>Style</h3>
-                    <p>For Everyday Life</p>
-                </div>
             </div>
-        </div>
-    </div>
-</section>
 
-<!-- ! Products Section -->
-<section class="products-section" id="products">
-    <div class="products-container">
-        <div class="products-heading">
-            <div class="heading-label">
-                <span></span>
-                <p>OUR COLLECTION</p>
-                <span></span>
-            </div>
-
-            <h2>Shop Our <em>Favorites</em></h2>
-
-            <p class="heading-description">
-                Discover handpicked products that bring style and comfort to your everyday life.
-            </p>
         </div>
 
-        <!-- ! Category Filters -->
-        <div class="category-filters" id="categoryFilters" aria-label="Filter products by category">
-            <button class="category-filter-btn active" type="button" data-category="all">
-                All
-            </button>
-        </div>
+    </section>
 
-        <!-- ! Products Grid -->
-        <div class="products-grid" id="productsGrid"></div>
 
-        <!-- *** Loading / Error Message -->
-        <p class="products-message" id="productsMessage">
-            Loading our favorites...
-        </p>
+    <!-- Products Section -->
+    <section class="products-section" id="products">
 
-        <!-- ! View All Button -->
-        <div class="view-products">
-            <button class="view-all-btn" id="viewAllBtn" type="button">
-                <span>View All Products</span>
-                <span class="view-arrow">→</span>
-            </button>
-        </div>
-    </div>
-</section>
+        <div class="products-container">
 
-<!-- ! Why Shop With Us -->
-<section class="why-section" id="why-us">
-    <div class="why-container">
-        <div class="why-intro">
-            <span class="why-label">THE SHOPEASE DIFFERENCE</span>
+            <div class="products-heading">
 
-            <h2>
-                A Little More Reason
-                <em>To Love Shopping.</em>
-            </h2>
-
-            <p>
-                Shopping should feel simple, enjoyable and worth your time.
-                That's why we bring together quality, convenience and care
-                in every order.
-            </p>
-
-            <a href="#products" class="why-link">
-                Explore Our Collection <span>→</span>
-            </a>
-        </div>
-
-        <div class="benefits-grid">
-            <article class="benefit-card">
-                <div class="benefit-icon"><i class="fa-solid fa-gem"></i></div>
-                <span class="benefit-number">01</span>
-                <h3>Quality Picks</h3>
-                <p>Thoughtfully selected products that bring something special to your everyday life.</p>
-            </article>
-
-            <article class="benefit-card">
-                <div class="benefit-icon"><i class="fa-solid fa-truck-fast"></i></div>
-                <span class="benefit-number">02</span>
-                <h3>Easy Delivery</h3>
-                <p>A smooth ordering experience that makes getting your favorites easier.</p>
-            </article>
-
-            <article class="benefit-card">
-                <div class="benefit-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                <span class="benefit-number">03</span>
-                <h3>Secure Shopping</h3>
-                <p>Shop with confidence through a simple and secure shopping experience.</p>
-            </article>
-
-            <article class="benefit-card">
-                <div class="benefit-icon"><i class="fa-solid fa-heart"></i></div>
-                <span class="benefit-number">04</span>
-                <h3>Made With Care</h3>
-                <p>From browsing to checkout, we focus on making every step feel effortless.</p>
-            </article>
-        </div>
-    </div>
-
-    <div class="why-bottom-line">
-        <span></span>
-        <p>GOOD FINDS. GOOD FEELINGS. EVERY TIME.</p>
-        <span></span>
-    </div>
-</section>
-
-<!-- ! Testimonials Section -->
-<section class="testimonial-section" id="testimonials">
-    <div class="testimonial-container">
-        <div class="testimonial-header">
-            <div class="testimonial-intro">
-                <span class="testimonial-label">A LITTLE LOVE FROM OUR CUSTOMERS</span>
+                <div class="heading-label">
+                    <span></span>
+                    <p>OUR COLLECTION</p>
+                    <span></span>
+                </div>
 
                 <h2>
-                    Real Words,
-                    <em>Happy Hearts.</em>
+                    Find Something
+                    <em>You Love</em>
+                </h2>
+
+                <p class="heading-description">
+                    A little something for every part of your everyday life.
+                </p>
+
+            </div>
+
+
+            <!-- Category Filters -->
+            <div class="category-filters" id="categoryFilters"></div>
+
+
+            <!-- Products -->
+            <div class="products-grid" id="productsGrid"></div>
+
+            <p class="products-message" id="productsMessage"></p>
+
+
+            <!-- View All Products -->
+            <div class="view-products">
+
+                <a href="all-products.html" class="view-all-btn" id="viewAllBtn">
+                    <span>View All Products</span>
+                    <span class="view-arrow">→</span>
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Why Shop With Us -->
+    <section class="why-section" id="why-us">
+
+        <div class="why-container">
+
+            <div class="why-intro">
+
+                <span class="why-label">WHY CHOOSE US</span>
+
+                <h2>
+                    Shopping Made
+                    <em>Simple & Better.</em>
                 </h2>
 
                 <p>
-                    The best part of shopping is finding something
-                    you love. Here's what our shoppers have to say
-                    about their experience.
+                    We believe shopping should be easy, enjoyable and
+                    convenient. Explore a collection made for everyday needs.
                 </p>
+
+                <a href="#products" class="why-link">
+                    Explore Our Collection
+                    <span>→</span>
+                </a>
+
             </div>
 
-            <div class="testimonial-controls">
-                <button class="review-arrow" id="reviewPrev" aria-label="Previous reviews" type="button">←</button>
-                <button class="review-arrow" id="reviewNext" aria-label="Next reviews" type="button">→</button>
+
+            <div class="benefits-grid">
+
+                <article class="benefit-card">
+
+                    <div class="benefit-icon">
+                        <i class="fa-solid fa-box-open"></i>
+                    </div>
+
+                    <span class="benefit-number">01</span>
+
+                    <h3>Quality Products</h3>
+
+                    <p>
+                        Carefully selected products for your everyday needs.
+                    </p>
+
+                </article>
+
+
+                <article class="benefit-card">
+
+                    <div class="benefit-icon">
+                        <i class="fa-solid fa-truck-fast"></i>
+                    </div>
+
+                    <span class="benefit-number">02</span>
+
+                    <h3>Easy Shopping</h3>
+
+                    <p>
+                        A smooth and simple way to find your favorite items.
+                    </p>
+
+                </article>
+
+
+                <article class="benefit-card">
+
+                    <div class="benefit-icon">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+
+                    <span class="benefit-number">03</span>
+
+                    <h3>Made With Care</h3>
+
+                    <p>
+                        We focus on making your shopping experience better.
+                    </p>
+
+                </article>
+
+
+                <article class="benefit-card">
+
+                    <div class="benefit-icon">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+
+                    <span class="benefit-number">04</span>
+
+                    <h3>Reliable Experience</h3>
+
+                    <p>
+                        Browse and shop with a clear and convenient process.
+                    </p>
+
+                </article>
+
             </div>
+
         </div>
 
-        <!-- ********* Reviews Slider -->
-        <div class="testimonial-slider" id="testimonialSlider">
-            <article class="testimonial-card">
-                <div class="review-top">
-                    <span class="quote-mark">“</span>
-                    <div class="review-stars">★★★★★</div>
-                </div>
-                <p class="review-text">
-                    Found exactly what I was looking for.
-                    The whole shopping experience felt easy,
-                    smooth and enjoyable.
-                </p>
-                <div class="review-customer">
-                    <div class="customer-avatar">SA</div>
-                    <div>
-                        <h3>Sarah Ahmed</h3>
-                        <span>Happy Shopper</span>
-                    </div>
-                </div>
-                <span class="review-number">01</span>
-            </article>
 
-            <article class="testimonial-card featured-review">
-                <div class="review-top">
-                    <span class="quote-mark">“</span>
-                    <div class="review-stars">★★★★★</div>
-                </div>
-                <p class="review-text">
-                    I love how simple everything feels.
-                    Browsing through the collection is easy,
-                    and finding my favorites is even easier.
-                </p>
-                <div class="review-customer">
-                    <div class="customer-avatar">AK</div>
-                    <div>
-                        <h3>Ali Khan</h3>
-                        <span>Happy Shopper</span>
-                    </div>
-                </div>
-                <span class="review-number">02</span>
-            </article>
-
-            <article class="testimonial-card">
-                <div class="review-top">
-                    <span class="quote-mark">“</span>
-                    <div class="review-stars">★★★★★</div>
-                </div>
-                <p class="review-text">
-                    Such a lovely collection! I really appreciate
-                    the variety and how effortless it is to
-                    explore different products.
-                </p>
-                <div class="review-customer">
-                    <div class="customer-avatar">ZM</div>
-                    <div>
-                        <h3>Zoya Malik</h3>
-                        <span>Happy Shopper</span>
-                    </div>
-                </div>
-                <span class="review-number">03</span>
-            </article>
-        </div>
-
-        <!-- ! Bottom Note -->
-        <div class="testimonial-footer">
+        <div class="why-bottom-line">
             <span></span>
-            <p>THANK YOU FOR BEING PART OF SHOPEASE</p>
+            <p>A BETTER WAY TO SHOP</p>
             <span></span>
         </div>
+
+    </section>
+
+
+    <!-- Testimonials Section -->
+    <section class="testimonial-section" id="reviews">
+
+        <div class="testimonial-container">
+
+            <div class="testimonial-header">
+
+                <div class="testimonial-intro">
+
+                    <span class="testimonial-label">CUSTOMER STORIES</span>
+
+                    <h2>
+                        What People
+                        <em>Are Saying.</em>
+                    </h2>
+
+                    <p>
+                        A few words from people who have enjoyed shopping
+                        with ShopEase.
+                    </p>
+
+                </div>
+
+
+                <div class="testimonial-controls">
+
+                    <button class="review-arrow" id="reviewPrev" type="button" aria-label="Previous review">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </button>
+
+                    <button class="review-arrow" id="reviewNext" type="button" aria-label="Next review">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="testimonial-slider" id="testimonialSlider">
+
+                <article class="testimonial-card">
+
+                    <div class="review-top">
+                        <span class="quote-mark">“</span>
+                        <span class="review-stars">★★★★★</span>
+                    </div>
+
+                    <p class="review-text">
+                        The shopping experience was simple and smooth.
+                        I really liked how easy it was to explore products.
+                    </p>
+
+                    <div class="review-customer">
+
+                        <div class="customer-avatar">AM</div>
+
+                        <div>
+                            <h3>Ali Malik</h3>
+                            <span>Happy Customer</span>
+                        </div>
+
+                    </div>
+
+                    <span class="review-number">01 / 05</span>
+
+                </article>
+
+
+                <article class="testimonial-card featured-review">
+
+                    <div class="review-top">
+                        <span class="quote-mark">“</span>
+                        <span class="review-stars">★★★★★</span>
+                    </div>
+
+                    <p class="review-text">
+                        I enjoyed browsing the collection. The website
+                        is clean, easy to use and looks really nice.
+                    </p>
+
+                    <div class="review-customer">
+
+                        <div class="customer-avatar">SK</div>
+
+                        <div>
+                            <h3>Sara Khan</h3>
+                            <span>Happy Customer</span>
+                        </div>
+
+                    </div>
+
+                    <span class="review-number">02 / 05</span>
+
+                </article>
+
+
+                <article class="testimonial-card">
+
+                    <div class="review-top">
+                        <span class="quote-mark">“</span>
+                        <span class="review-stars">★★★★★</span>
+                    </div>
+
+                    <p class="review-text">
+                        Everything is organized nicely. Finding products
+                        and adding them to the cart feels very convenient.
+                    </p>
+
+                    <div class="review-customer">
+
+                        <div class="customer-avatar">HR</div>
+
+                        <div>
+                            <h3>Hassan Raza</h3>
+                            <span>Happy Customer</span>
+                        </div>
+
+                    </div>
+
+                    <span class="review-number">03 / 05</span>
+
+                </article>
+<article class="testimonial-card">
+
+                    <div class="review-top">
+                        <span class="quote-mark">“</span>
+                        <span class="review-stars">★★★★★</span>
+                    </div>
+
+                    <p class="review-text">
+                        The site is well-structured, making it effortless to browse through the catalog. Adding items to my cart and checking out feels completely seamless.
+                    </p>
+
+                    <div class="review-customer">
+
+                        <div class="customer-avatar">JK</div>
+
+                        <div>
+                            <h3>Jaweria Khan</h3>
+                            <span>Happy Customer</span>
+                        </div>
+
+                    </div>
+
+                    <span class="review-number">04 / 05</span>
+
+                </article>
+<article class="testimonial-card">
+
+                    <div class="review-top">
+                        <span class="quote-mark">“</span>
+                        <span class="review-stars">★★★★★</span>
+                    </div>
+
+                    <p class="review-text">
+                       The layout is super clean and easy to navigate. Browsing items and checking out takes almost no effort.
+                    </p>
+
+                    <div class="review-customer">
+
+                        <div class="customer-avatar">ER</div>
+
+                        <div>
+                            <h3>Esha Rasool</h3>
+                            <span>Happy Customer</span>
+                        </div>
+
+                    </div>
+
+                    <span class="review-number">05 / 05</span>
+
+                </article>
+
+            </div>
+
+
+            <div class="testimonial-footer">
+                <span></span>
+                <p>YOUR EXPERIENCE MATTERS</p>
+                <span></span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+
+        <div class="about-container">
+
+            <div class="about-content">
+
+                <span class="about-label">A LITTLE ABOUT US</span>
+
+                <h2>
+                    Welcome to
+                    <em>ShopEase.</em>
+                </h2>
+
+                <p>
+                    ShopEase is all about making online shopping simple
+                    and enjoyable. We bring different products together
+                    in one convenient place.
+                </p>
+
+                <p>
+                    From everyday essentials to things you simply love,
+                    our goal is to make discovering products easier.
+                </p>
+
+                <a href="#products" class="about-link">
+                    Start Exploring
+                    <span>→</span>
+                </a>
+
+            </div>
+
+
+            <div class="about-art">
+                <span>ShopEase.</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="site-footer" id="footer">
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+
+                <h2>ShopEase.</h2>
+
+                <p>
+                    Making everyday shopping simple, convenient
+                    and enjoyable.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Quick Links</h3>
+
+                <a href="#home">Home</a>
+                <a href="#products">Shop</a>
+                <a href="#about">About Us</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Explore</h3>
+
+                <a href="all-products.html">All Products</a>
+                <a href="#why-us">Why Shop With Us</a>
+                <a href="#reviews">Testimonials</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>© 2026 ShopEase. All rights reserved.</p>
+
+            <p>Made with care for a better shopping experience.</p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- Cart Popup -->
+    <div class="cart-overlay" id="cartOverlay">
+
+        <div class="cart-modal">
+
+            <div class="cart-modal-header">
+
+                <div>
+                    <span class="cart-heading-label">YOUR BAG</span>
+                    <h2>Shopping Cart</h2>
+                </div>
+
+                <button class="cart-close-btn" id="cartCloseBtn" type="button" aria-label="Close cart">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+            </div>
+
+
+            <div class="cart-items" id="cartItems">
+
+                <p class="empty-cart-message">
+                    Your cart is empty.
+                </p>
+
+            </div>
+
+
+            <div class="cart-modal-footer">
+
+                <div class="cart-total-row">
+                    <span>Total</span>
+                    <strong id="cartTotal">$0.00</strong>
+                </div>
+
+                <button class="cart-continue-btn" id="cartContinueBtn" type="button">
+                    Continue Shopping
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </div>
+
+        </div>
+
     </div>
-</section>
 
-<!-- ! About ShopEase -->
-<section class="about-section" id="about">
-    <div class="about-container">
-        <div class="about-content">
-            <span class="about-label">A LITTLE ABOUT US</span>
-            <h2>Shopping Made <em>Simple.</em></h2>
-            <p>
-                At ShopEase, we believe finding everyday essentials should feel
-                simple and enjoyable. Our collection brings together a variety
-                of products in one convenient place.
-            </p>
-            <p>
-                Whether you're looking for something useful or something you
-                simply love, we're here to make discovering your next favorite
-                a little easier.
-            </p>
-            <a href="#products" class="about-link">
-                Explore the Collection <span>→</span>
-            </a>
-        </div>
 
-        <div class="about-art" aria-label="ShopEase decorative brand artwork">
-            <span>ShopEase.</span>
-        </div>
-    </div>
-</section>
+    <script src="script.js"></script>
 
-<!-- ! Footer -->
-<footer class="site-footer" id="footer">
-    <div class="footer-container">
-        <div class="footer-brand">
-            <h2>ShopEase.</h2>
-            <p>
-                Everyday essentials, thoughtfully brought together.
-                Discover your favorites and enjoy a simple shopping experience.
-            </p>
-        </div>
-
-        <div class="footer-column">
-            <h3>Explore</h3>
-            <a href="#home">Home</a>
-            <a href="#products">Shop Products</a>
-            <a href="#why-us">Why Shop With Us</a>
-            <a href="#about">About Us</a>
-        </div>
-
-        <div class="footer-column">
-            <h3>Stay Connected</h3>
-            <a href="mailto:hello@shopease.com">Email Us</a>
-            <a href="#testimonials">Customer Reviews</a>
-            <a href="#products">Browse Collection</a>
-        </div>
-    </div>
-
-    <div class="footer-bottom">
-        <p>© 2026 ShopEase. All rights reserved.</p>
-        <p>Made for everyday shopping.</p>
-    </div>
-</footer>
-
-<script src="script.js"></script>
 </body>
 </html>
